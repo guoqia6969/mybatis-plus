@@ -72,6 +72,12 @@ class MybatisPlusApplicationTests {
         System.out.println("本次删除条数："+i);
     }
 
+    @Test
+    public void testSelectAllByName(){
+        List<User> users = userMapper.selectAllByName("Jack");
+        users.forEach(System.out::println);
+    }
+
 
 
 }

@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author wangsh
@@ -38,5 +39,11 @@ public class ServiceTests {
             users.add(user);
         }
         userService.saveBatch(users);
+    }
+
+    @Test
+    public void testSelectAllByName(){
+        List<User> users = userService.selectAllByName("Jack");
+        users.forEach(System.out::println);
     }
 }
