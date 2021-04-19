@@ -68,7 +68,7 @@ class MybatisPlusApplicationTests {
 
     @Test
     void testDelete(){
-        int i = userMapper.deleteById(1);
+        int i = userMapper.deleteById(1384100636998553602L);
         System.out.println("本次删除条数："+i);
     }
 
