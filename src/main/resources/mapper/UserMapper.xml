@@ -3,15 +3,23 @@
 
 <mapper namespace="com.atguigu.mybatisplus.mapper.UserMapper">
     <sql id="Base_Column_List">
-        id, name, age, email
+        uid, name, age, email
     </sql>
 
     <select id="selectAllByName" resultType="com.atguigu.mybatisplus.entity.User">
         select
         <include refid="Base_Column_List"/>
-        from user
+        from t_user
         where
         name = #{name}
+    </select>
+
+    <select id="selectByPage" resultType="com.atguigu.mybatisplus.entity.User">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM t_user
+        WHERE
+        age > #{age}
     </select>
 
 </mapper>

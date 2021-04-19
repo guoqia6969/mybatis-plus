@@ -2,6 +2,8 @@ package com.atguigu.mybatisplus.mapper;
 
 import com.atguigu.mybatisplus.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,4 +23,12 @@ public interface UserMapper extends BaseMapper<User> {
      * @return userList
      */
     List<User> selectAllByName(String name);
+
+    /**
+     * 根据年龄查询列表，分页显示
+     * @param page page对象
+     * @param age 年龄
+     * @return 分页后的user对象
+     */
+    IPage<User> selectByPage(Page<?> page,Integer age);
 }
