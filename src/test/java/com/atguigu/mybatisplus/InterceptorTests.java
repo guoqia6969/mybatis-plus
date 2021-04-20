@@ -37,6 +37,10 @@ public class InterceptorTests {
         Page<User> pageParam = new Page<>(1,5);
         userMapper.selectByPage(pageParam, 20);
         List<User> users = pageParam.getRecords();
+        long total = pageParam.getTotal();
+        boolean b = pageParam.hasNext();
+        System.out.println(total);
+        System.out.println(b);
         users.forEach(System.out::println);
     }
 }
