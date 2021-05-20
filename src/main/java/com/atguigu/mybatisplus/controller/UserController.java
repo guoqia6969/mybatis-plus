@@ -11,7 +11,6 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author 24787
  * @author wangsh
  * @Classname UserController
  * @Description
